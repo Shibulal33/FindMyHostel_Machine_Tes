@@ -11,7 +11,7 @@ const billSchema = new mongoose.Schema({
     },
     billType: {
         type: String,
-        enum: ["security", "others"],
+        enum: ["security", "other"],
         default: "security"
     },
     strActiveStatus: { type: String },
