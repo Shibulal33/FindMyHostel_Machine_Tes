@@ -142,7 +142,7 @@ const listAllUsers = async (req, res) => {
         }
 
         const project = {
-            _id: 0,
+            _id: 1,
             name: 1,
             email: 1,
             role: 1,
