@@ -1,5 +1,5 @@
 let BASE_URL = null
-const production = false
+const production = true
 if (production) {
     BASE_URL = "http://16.171.24.157:4000"
 } else {
