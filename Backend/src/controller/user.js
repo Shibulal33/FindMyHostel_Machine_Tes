@@ -252,15 +252,15 @@ const vacateUser = async (req, res) => {
         }, {
             $facet: {
                 refundAmount: [
-                    { $match: { status: "pending", billType: "security" } },
+                    { $match: { status: "paid", billType: "security" } },
                     { $group: { _id: null, totalAmount: { $sum: "$amount" } } }
                 ],
                 paidAmount: [
-                    { $match: { status: "paid", billType: "other" } },
+                    { $match: { status: "paid" } },
                     { $group: { _id: null, totalAmount: { $sum: "$amount" } } }
                 ],
                 pendingAmount: [
-                    { $match: { status: "pending", billType: "other" } },
+                    { $match: { status: "pending" } },
                     { $group: { _id: null, totalAmount: { $sum: "$amount" } } }
                 ]
             }
